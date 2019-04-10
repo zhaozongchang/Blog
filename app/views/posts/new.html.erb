@@ -1,7 +1,9 @@
-<h2>新增博客</h2>
 
-<%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.input :body %>
-  <%= f.submit %>
-<% end %>
+<div id="page_wrapper">
+  <h2 style="text-align:center;">新增博客</h2>
+  <%= simple_form_for @post do |f| %>
+    <%= f.input :title,label: "标题"%>
+    <%= f.input :body,label: "内容"%>
+    <%= f.submit %>
+  <% end %>
+</div>

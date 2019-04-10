@@ -5,12 +5,53 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
   </head>
 
   <body>
     <div class="container-fluid">
-      <%= render "common/navbar" %>
+      <div class="row">
+        <%= render "common/navbar" %>
+      </div>
+
+      <div id="sidebar">
+        <div id="logo">
+          <%= link_to root_path do %>
+          <%= image_tag 'logl.svg.png', class: 'img-responsive' %>
+          <% end %>
+        </div>
+
+        <ul>
+          <li class="category">博客中心</li>
+          <li><%= link_to "全部博客", root_path%></li>
+          <li><%= link_to "我的博客", "#" %></li></li>
+        </ul>
+        <ul>
+          <li class="category">帮助中心</li>
+          <li><a href="#">服务中心</a></li>
+          <li><a href="#">支持我们</a></li>
+          <li><a href="#">联系我们</a></li>
+          <li><a href="#" target="_blank">关于我们</a></li>
+        </ul>
+        <p class="sign_in">Admin Login</p>
+      </div>
+
+      <div id="main_content">
+		<div id="header">
+				<p>All Posts</p>
+
+ 			<div class="buttons">
+				<button class="button"><%= link_to "New Post", new_post_path %></button>
+				<button class="button">Log Out</button>
+			</div>
+		</div>
+
+    <% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert") %>
+		<% end %>
+
     <%= yield %>
     </div>
     <%= render "common/footer" %>
