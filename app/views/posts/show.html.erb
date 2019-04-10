@@ -3,5 +3,10 @@
   <h1 class="title">
    <%= @post.title %>
   </h1>
+  <p>
+    更新于 <%= time_ago_in_words(@post.created_at)%>
+    <%= link_to "编辑", edit_post_path(@post), class: "btn btn-default btn-xs"%>
+    <%= link_to "删除", post_path(@post), method: :delete,class: "btn btn-default btn-xs", data: { confirm: "Are you sure?" } %>
+  </p>
   <%= @post.body %>
 </div>
