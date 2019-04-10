@@ -1,9 +1,8 @@
 <% @posts.each do |post|  %>
-<div class="col-md-12">
+<div id="page_wrapper">
   <div class="post-weapper">
     <h2 class="title"><%= link_to post.title, post %></h2>
-    <p class="data"><%= post.created_at.strftime("%Y, %D, %B") %></p><hr>
+    <p class="data"><%= post.created_at.strftime("%Y, %D, %B") %></p>
   </div>
-
-  <% end %>
 </div>
+<% end %>
