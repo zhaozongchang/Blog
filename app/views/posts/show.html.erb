@@ -11,4 +11,19 @@
 
   </p>
   <%= @post.body %>
+
+  <div class="row comment">
+  <div class="col-sm-10 col-sm-offset-1">
+    <h3 class="comments_title">
+      <%= @post.comments.count %> comments
+    </h3>
+    <hr>
+    <div id="reivews">
+      <%= render @post.comments %>
+      <hr>
+      <%= render "comments/form" %>
+    </div>
+  </div>
+</div>
+
 </div>
