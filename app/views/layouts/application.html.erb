@@ -32,7 +32,7 @@
           <li class="category">帮助中心</li>
           <li><a href="#">服务中心</a></li>
           <li><a href="#">支持我们</a></li>
-          <li><a href="#">联系我们</a></li>
+          <li><a href=https://github.com/zhaozongchang >联系我们</a></li>
           <li><a href="#" target="_blank">关于我们</a></li>
         </ul>
         <p class="sign_in">Admin Login</p>
@@ -40,10 +40,10 @@
 
       <div id="main_content">
 		<div id="header">
-				<p>All Posts</p>
+				<p><%= link_to "All Posts", posts_path %></p>
 
  			<div class="buttons">
-				<button class="button"><%= link_to "New Post", new_post_path %></button>
+				<button class="button"><%= link_to "新增博客", new_post_path %></button>
 				<button class="button">
           <% if !current_user %>
                   <%= link_to("注册", new_user_registration_path) %> |
