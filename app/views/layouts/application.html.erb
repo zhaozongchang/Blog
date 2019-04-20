@@ -35,7 +35,14 @@
           <li><a href=https://github.com/zhaozongchang >联系我们</a></li>
           <li><a href="#" target="_blank">关于我们</a></li>
         </ul>
-        <p class="sign_in">Admin Login</p>
+        <p class="sign_in">
+          <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %>
+          <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+          <br>
+          <%= link_to "FAQ", faq_path %>
+        </p>
+
+
       </div>
 
       <div id="main_content">

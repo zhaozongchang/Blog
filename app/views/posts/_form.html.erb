@@ -8,7 +8,12 @@
   </ul>
   <% end %>
 
-  <%= f.input :title,label: "标题"%>
-  <%= f.input :body,label: "内容"%>
+  <%= f.input :title%>
+  <%= f.input :body%>
+  <div class="form-group">
+  <%= f.label :friendly_id %>
+  <%= f.text_field :friendly_id, required: true, class: "form-control" %>
+  <p class="help-block">限小写英数字及横线，将作为网址的一部分</p>
+</div>
   <%= f.submit %>
 <% end %>
