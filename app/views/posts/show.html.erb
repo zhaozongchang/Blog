@@ -3,6 +3,8 @@
   <h1 class="title">
    <%= @post.title %>
   </h1>
+  <h5><%= t(@post.status, :scope => "event.status") %></h5>
+  <h2><%= @post.category.try(:title) %></h2>
   <p>
     更新于 <%= time_ago_in_words(@post.created_at)%>
 
