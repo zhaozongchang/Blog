@@ -40,6 +40,18 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def bulk_update
+    total = 0
+    Array(params[:ids]).each do |post_id|
+      post = Post.find(post_id)
+      post.destroy
+      total += 1
+    end
+
+    flash[:alert] = "成功完成 #{total} 笔"
+    redirect_to posts_path
+  end
+
   private
 
   def post_params
